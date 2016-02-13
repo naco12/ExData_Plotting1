@@ -1,0 +1,5 @@
+ p <-read.csv.sql("household_power_consumption.txt", sql = "select * from file WHERE Date IN ('1/2/2007','2/2/2007')", header = TRUE, sep = ";")
+ plot(as.POSIXct(paste(p$Date,p$Time), format="%d/%m/%Y %H:%M:%S"),p$Sub_metering_1, xlab="",ylab="Global Active Power (kilowatts)",type="l")
+ points(as.POSIXct(paste(p$Date,p$Time), format="%d/%m/%Y %H:%M:%S"),p$Sub_metering_2,col="red", type ="l" )
+ points(as.POSIXct(paste(p$Date,p$Time), format="%d/%m/%Y %H:%M:%S"),p$Sub_metering_3,col="blue", type ="l" )
+ legend("topright",pch = 3, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))

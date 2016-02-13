@@ -1,0 +1,5 @@
+ p <-read.csv.sql("household_power_consumption.txt", sql = "select * from file WHERE Date IN ('1/2/2007','2/2/2007')", header = TRUE, sep = ";")
+hist(p$Global_active_power)
+hist(p$Global_active_power,col = "red")
+ hist(p$Global_active_power,col = "red",main = "Global Active Power",xlab = "Gloabal Active Power(kilowatts)")
+ axis(2, at = seq(0,1200, by=200))
